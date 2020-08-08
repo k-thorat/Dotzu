@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
         // Customize Dotzu programmatically using LogSettings.
         // Some of the LogSettings options are also available inside Dotzu Settings user interface.
@@ -35,7 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 #if DEBUG
     extension UIWindow {
 
-        override open func motionBegan(_ motion: UIEventSubtype, with event: UIEvent?) {
+        override open func motionBegan(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
             if motion == .motionShake {
                 if let controller = Dotzu.sharedManager.viewController() {
                     self.rootViewController?.present(controller, animated: true, completion: nil)
